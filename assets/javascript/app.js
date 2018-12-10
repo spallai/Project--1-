@@ -21,11 +21,23 @@ function searchRecipe(event) {
         for (i = 0; i < results.length; i++) {
             console.log(results[i]);
 
-
             //EXAMPLE
+            var recipeDiv = $("<div>").addClass("recipe");
+            
+            var recipeLabel = $("<h3>").addClass("label");
+            recipeLabel.text("Entree: " + results[i].recipe.label);
+            
+            var recipeImage = $("<img>").addClass("image");
+            recipeImage.attr("src", results[i].recipe.image);
+            
+            var recipeURL = $("<a>").addClass("url");
+            recipeURL.attr("href", results[i].recipe.url);
+            recipeURL.text("Recipe Link");
 
-        
-
+            recipeDiv.append(recipeLabel);
+            recipeDiv.append(recipeImage);
+            recipeDiv.append(recipeURL);
+            $("#leftCol").append(recipeDiv);
         }
     })
 
