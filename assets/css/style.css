@@ -14,16 +14,40 @@ body {
 }
 
 .container {
-    margin: 2% 5% 4% 5%;
-    height: 32em;
+    height: 33em;
+    margin-top: 2%;
 }
 
-#leftCol, #rightCol{
-    background-color: white;
-    width:47%;
-    height:29em;
-    margin: 2% 1%;
-    display: inline-flex;
+#searchRow {
+    background-color: rgba(300, 400, 800, 0.3);
+    color: black;
+    margin: .5% 20%; 
+}
+
+h1 {
+    font-size: 2.7em;
+    font-weight: bold;
+    
+}
+
+#search {
+    font-size: 1.8em;
+    width: 200px;
+}
+
+label {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+#leftCol {
+    /* background-color: yellow; */
+    margin: 2% 0% 0% -7%;
+    text-align: center;
+    height: 35em;
+    width: 34%;
+    display: inline-block;
 }
 
 #rightCol {
@@ -34,8 +58,8 @@ body {
 h2 {
     display: inline-flex;
     height: 5px;
+    font-size: 1.7em;
 }
-
 
 iframe {
     width: 100%;
@@ -52,5 +76,9 @@ iframe {
 }
 
 footer {
-    margin-top: 5%;
+    margin-top: 0%;
+}
+
+.image {
+    width: 20%;
 }

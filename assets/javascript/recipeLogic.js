@@ -18,6 +18,7 @@ function searchRecipe(event) {
         var results = response.hits;
         console.log(response);
 
+        $("#leftCol").empty();
         for (i = 0; i < results.length; i++) {
             console.log(results[i]);
 
@@ -25,7 +26,7 @@ function searchRecipe(event) {
             var recipeDiv = $("<div>").addClass("recipe");
             
             var recipeLabel = $("<h3>").addClass("label");
-            recipeLabel.text("Entree: " + results[i].recipe.label);
+            recipeLabel.text(results[i].recipe.label);
             
             var recipeImage = $("<img>").addClass("image");
             recipeImage.attr("src", results[i].recipe.image);
@@ -37,7 +38,7 @@ function searchRecipe(event) {
             });
             
             recipeURL.text("Recipe Link");
-
+            
             recipeDiv.append(recipeLabel);
             recipeDiv.append(recipeImage);
             recipeDiv.append(recipeURL);
