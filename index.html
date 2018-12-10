@@ -33,10 +33,7 @@
                 </div>
 
                 <div id="iFrameDiv" style="float: right; clear: right">
-                    <iframe width="200" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ
-    &q=mushroom"
-                        allowfullscreen>
-                    </iframe>
+                    <div id="map" style="height: 100%"></div>
                 </div>
             </div>
 
@@ -46,10 +43,11 @@
 
         </div>
     </div>
-
-</body>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ&libraries=places&callback=createMap"
+    async defer></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
 <script src="assets/javascript/app.js"></script>
+</body>
 
 </html>
