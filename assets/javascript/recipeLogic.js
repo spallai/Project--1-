@@ -2,7 +2,11 @@ var recipeBaseUrl = "https://api.edamam.com/search?&app_id=c3d07cfd&app_key=2a58
 console.log(recipeBaseUrl);
 var searchTerm = "";
 
-$("#submit").on("click", searchRecipe);
+$("#submit").on("click", function(){
+    searchRecipe();
+    $("#search").val("");
+
+});
 
 
 
@@ -19,6 +23,7 @@ function searchRecipe(event) {
         console.log(response);
 
         $("#leftCol").empty();
+       
         for (i = 0; i < results.length; i++) {
             console.log(results[i]);
 
@@ -43,7 +48,9 @@ function searchRecipe(event) {
             recipeDiv.append(recipeImage);
             recipeDiv.append(recipeURL);
             $("#leftCol").append(recipeDiv);
+            
         }
+        
     })
 
 }

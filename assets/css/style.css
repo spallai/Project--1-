@@ -82,3 +82,7 @@ footer {
 .image {
     width: 20%;
 }
+
+.recipe {
+    border-style: solid;
+}
