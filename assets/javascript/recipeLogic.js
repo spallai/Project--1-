@@ -4,6 +4,12 @@ var searchTerm = "";
 
 $("#submit").on("click", searchRecipe);
 
+$("#search").keyup(function(event) {
+    if (event.keyCode === 13) {
+        $("#search").click();
+    }
+});
+
 
 
 function searchRecipe(event) {
