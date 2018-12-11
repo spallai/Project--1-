@@ -8,6 +8,7 @@ $("#search").keyup(function(event) {
     if (event.keyCode === 13) {
         $("#search").click();
     }
+    
 });
 
 
@@ -24,7 +25,7 @@ function searchRecipe(event) {
         var results = response.hits;
         console.log(response);
 
-        $("#leftCol").empty();
+        $("#recipeContainer").empty();
        
         for (i = 0; i < results.length; i++) {
             console.log(results[i]);
@@ -50,7 +51,7 @@ function searchRecipe(event) {
             recipeDiv.append(recipeLabel);
             recipeDiv.append(recipeURL);
             $("#recipeContainer").append(recipeDiv);
-            
+           
         }
         $("#search").val("");
     })
