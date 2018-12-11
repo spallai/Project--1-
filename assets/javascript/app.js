@@ -1,59 +1,103 @@
-
-createMap();
-
-
 var map;
-var infoWindow;
+var service;
+var infoWindow = new google.maps.InfoWindow();
+var lat;
+var lng;
+var markers = [];
+
+
+initMap();
+getLocation();
+
+function initMap() {
+
+    var myLocation = { lat: 34, lng: -118 };
+    console.log(myLocation);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: new google.maps.LatLng(34.0522, -118.2437),
+        zoom: 13
+    });
+
+}
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        alert("Geolocation is not supported by this browser.");
+    }
+}
+function showPosition(position) {
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+    map.setCenter(new google.maps.LatLng(lat, lng));
+}
+
 
 $(document).on("click", "#submit", function () {
-
     event.preventDefault();
     var newSearch = $("#search").val();
     console.log(newSearch);
 
-    infoWindow = new google.maps.infoWindow();
-    
-    var service = new google.maps.places.PlacesService(map);
-
-
-
-});
-
-
-function createMap() {
-
-
-    var losAngeles = { lat: 34.0349571, lng: -118.4708208 };
+    var request = {
+        location: new google.maps.LatLng(lat, lng),
+        radius: '1000',
+        query: newSearch,
+        type: ['restaurant']
+    };
     console.log(google);
 
-    map = new google.maps.Map(document.getElementById('map'), {
+    service = new google.maps.places.PlacesService(map);
+    service.textSearch(request, callback);
 
-        center: losAngeles,
-        zoom: 7
+})
 
-    });
-    
+function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+        markers[i].setMap(map);
+    }
 }
 
-// function callBack(results, status) {
-//     if (status === google.maps.places.PlacesServiceStatus.OK) {
-//         for (var i = 0; i < results.length; i++) {
-//             createMarker(results[i]);
-//         }
-//     }
-// }
+function deleteMarkers() {
+    for (var i = 0; i < markers.length; i++) {
+        setMapOnAll(null);
+    }
+    markers = [];
+}
 
-// function createMarker(place) {
-//     var placeLoc = place.geometry.location;
-//     var marker = new google.maps.Marker({
-//         map: map,
-//         position: place.geometry.location
+$(document).on("click", "#search", function () {
 
-//     });
+    deleteMarkers();
 
-//     google.maps.event.addListener(marker, 'click', function () {
-//         infoWindow.setContent(place.name);
-//         infowindow.open(map, this);
-//     });
+})
 
-// }
+
+function createMarker(place) {
+    var placeLoc = place.geometry.location;
+    var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infoWindow.setContent(place.name);
+        infoWindow.open(map, this);
+    });
+
+    markers.push(marker);
+    console.log(markers);
+}
+
+
+
+function callback(results, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+        for (var i = 0; i < results.length; i++) {
+            var place = results[i];
+            createMarker(results[i]);
+
+        }
+    }
+}
