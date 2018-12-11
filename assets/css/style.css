@@ -10,8 +10,8 @@ body {
     background-repeat: no-repeat;
     /* background-position: center; */
     background-blend-mode: color;
-    background-size: 102%;
-    font-family: 'Tangerine', cursive;
+    background-size: 100%;
+    font-family: 'Tangerine';
 }
 
 .container {
