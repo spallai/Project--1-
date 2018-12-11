@@ -1,6 +1,6 @@
 * {
     text-align: center;
-    font-family: 'Tangerine', cursive;
+    font-family: 'Tangerine';
 
 }
 
@@ -10,7 +10,7 @@ body {
     background-position: center;
     background-blend-mode: color;
     background-size: 100%;
-    font-family: 'Tangerine', cursive;
+    font-family: 'Tangerine';
 }
 
 .container {
