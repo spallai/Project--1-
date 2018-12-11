@@ -49,9 +49,7 @@ function searchRecipe(event) {
             recipeDiv.append(recipeImage);
             recipeDiv.append(recipeLabel);
             recipeDiv.append(recipeURL);
-            
-            
-            $("#leftCol").append(recipeDiv);
+            $("#recipeContainer").append(recipeDiv);
             
         }
         $("#search").val("");
