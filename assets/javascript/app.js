@@ -70,9 +70,10 @@ function deleteMarkers() {
 $(document).on("click", "#search", function () {
 
     deleteMarkers();
+    
 
 })
-
+$("#leftCol").empty();
 
 function createMarker(place) {
     var placeLoc = place.geometry.location;
