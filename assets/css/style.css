@@ -7,21 +7,18 @@
 
 body {
     background-image: url("../images/Screen\ Shot\ 2018-12-08\ at\ 15.00.50.png");
-    background-repeat: no-repeat;
-    /* background-position: center; */
-    background-blend-mode: color;
-    background-size: 100%;
+    background-repeat: no-repeat;   
+    background-size: 102%;
     font-family: 'Tangerine';
 }
 
-.container {
-    height: 39em;
-}
-
 #searchRow {
-    background-color: rgba(300, 400, 800, 0.3);
-    color: black;
-    margin: 2% 39%;
+   color: black;
+   margin: 2% 42%;
+   background-color: white;
+   border-radius: 26%;
+   padding: 0% -4% 0% 1%;
+   width: 19%;
 }
 
 h1 {
@@ -40,59 +37,32 @@ label {
     font-weight: bold;
 }
 
-.column {
-    background-color: yellow;
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
+
+#grid {
+    background: white;
     content: "";
     display: table;
     clear: both;
-  }
-
-
-#leftCol {
-    /* background-color: yellow; */
-    /* margin: 2% 0% 0% -7%;
-    text-align: center;
-    height: 35em;
-    width: 34%;
-    display: inline-block; */
+    width: 70%;
+    margin-left: 15%;
 }
 
-#recipeContainer {
-    height: 35em;
-    width: 34%;
-    display: inline-block;
+[class*='col-'] {
+  float: left;
+  width: 50%;
+  height: 38em;
 }
 
-#rightCol {
-    /* display: inline-block;
-    width: 32%; */
+
+.outline, .outline *{
+    outline: 1px solid #F6A1A1; 
 }
+
 
 h2 {
     font-size: 1.7em;
 }
 
-/* iframe {
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-  
-} */
-
-/* #iFrameDiv {
-    margin-top: 1%;
-    margin-right: -11%;
-    width: 94%;
-    height: 33em;
-} */
 
 footer {
     margin-top: 0%;
@@ -109,6 +79,5 @@ footer {
 #map {
 
     height: 100%;
-
 
 }
