@@ -71,7 +71,7 @@ $(document).on("click", "#search", function () {
     
 
 })
-$("#leftCol").empty();
+
 
 function createMarker(place) {
     var placeLoc = place.geometry.location;

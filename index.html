@@ -8,9 +8,10 @@
     <title>RecAPI</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Cinzel|Gloria+Hallelujah|Great+Vibes|Homemade+Apple|Indie+Flower|Open+Sans+Condensed:300|Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Gloria+Hallelujah|Great+Vibes|Homemade+Apple|Indie+Flower|Open+Sans+Condensed:300|Tangerine"
+        rel="stylesheet">
     <!-- font family to choose  -->
-<!-- 
+    <!-- 
 font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Indie Flower', cursive;
 font-family: 'Gloria Hallelujah', cursive;
@@ -29,35 +30,33 @@ font-family: 'Homemade Apple', cursive;  -->
             <input class="button" id="submit" type="submit" style="font-family: 'Tangerine', cursive">
         </form>
     </div>
-   
+
     <div class="grid-container outline" id="grid">
         <div class="row">
             <div class="col-1">
                 <h2>Recipe Results</h2>
-            </div> 
-            <div id="recipeContainer">
-            </div> 
-        </div> 
-        <div class="row">
-              
-            <div id="column" class="col2">
-                    <h2>Place Results</h2>
-                </div>
-                <div id="map">
-                </div>
+                <div id="recipeContainer"></div>
             </div>
-        
-      
+
+            <div id="column" class="col-2">
+                <h2>Place Results</h2>
+                <div id="map"></div>
+            </div>
+
+        </div>
+
     </div>
-   
-    
-    <footer><h1>RecAPI &#169</h1></footer>
-  
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlWQlpf6ZOi51m15jTbAfQpakUK1W6m68&libraries=places"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js"></script>
-<script src="assets/javascript/recipeLogic.js"></script>
+
+
+    <footer>
+        <h4>RecAPI &#169</h4>
+    </footer>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlWQlpf6ZOi51m15jTbAfQpakUK1W6m68&libraries=places"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/recipeLogic.js"></script>
 
 </body>
 
