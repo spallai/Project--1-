@@ -1,41 +1,87 @@
 * {
     text-align: center;
+    font-family: 'Tangerine';
+
+}
+
+body {
+    background-image: url("../images/Screen\ Shot\ 2018-12-08\ at\ 15.00.50.png");
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    background-blend-mode: color;
+    background-size: 100%;
+    font-family: 'Tangerine';
 }
 
 .container {
-    background-color: darkgrey;
-    margin: 2% 5% 4% 5%;
-    height: 32em;
+    height: 33em;
 }
 
-#leftCol, #rightCol{
-    background-color: white;
-    width:47%;
-    height:29em;
-    margin: 2% 1%;
-    display: inline-flex;
+#searchRow {
+    background-color: rgba(300, 400, 800, 0.3);
+    color: black;
+    margin: 2% 39%;
+}
+
+h1 {
+    font-size: 2.7em;
+    font-weight: bold;
+    
+}
+
+#search {
+    font-size: 1.8em;
+    width: 200px;
+}
+
+label {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
+#leftCol {
+    /* background-color: yellow; */
+    margin: 2% 0% 0% -7%;
+    text-align: center;
+    height: 35em;
+    width: 34%;
+    display: inline-block;
 }
 
 #rightCol {
     display: inline-block;
+    width: 32%;
 }
 
 h2 {
     display: inline-flex;
     height: 5px;
+    font-size: 1.7em;
 }
 
 iframe {
     width: 100%;
     height: 100%;
+    border-radius: 25px;
+  
 }
 
 #iFrameDiv {
-    margin-top: 2%;
-    margin-right: 2%;
-    width: 96%;
-    height: 92%;
+    margin-top: 1%;
+    margin-right: -11%;
+    width: 94%;
+    height: 33em;
 }
 
+footer {
+    margin-top: 0%;
+}
 
+.image {
+    width: 20%;
+}
 
+.recipe {
+    border-style: solid;
+}
