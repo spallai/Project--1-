@@ -7,7 +7,7 @@
 body {
     background-image: url("../images/Screen\ Shot\ 2018-12-08\ at\ 15.00.50.png");
     background-repeat: no-repeat;
-    background-position: center;
+    /* background-position: center; */
     background-blend-mode: color;
     background-size: 100%;
     font-family: 'Tangerine';
@@ -15,13 +15,12 @@ body {
 
 .container {
     height: 33em;
-    margin-top: 2%;
 }
 
 #searchRow {
     background-color: rgba(300, 400, 800, 0.3);
     color: black;
-    margin: .5% 20%; 
+    margin: 2% 39%;
 }
 
 h1 {
