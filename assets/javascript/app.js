@@ -12,7 +12,6 @@ getLocation();
 function initMap() {
 
     var myLocation = { lat: 34, lng: -118 };
-    console.log(myLocation);
 
     map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(34.0522, -118.2437),
@@ -43,11 +42,10 @@ $(document).on("click", "#submit", function () {
 
     var request = {
         location: new google.maps.LatLng(lat, lng),
-        radius: '1000',
         query: newSearch,
+        radius: 10,
         type: ['restaurant']
     };
-    console.log(google);
 
     service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
@@ -82,12 +80,21 @@ function createMarker(place) {
     });
 
     google.maps.event.addListener(marker, 'click', function () {
-        infoWindow.setContent(place.name);
+        console.log(place);
+        var content = {
+            name: place.name,
+            address: place.formatted_address,
+            rating: place.rating
+        }
+        console.log(content);
+        var stringAddress = content.address;
+        var stringName = content.name;
+        var stringRating = content.rating;
+        infoWindow.setContent(stringName +"<br>"+ stringAddress +"<br>"+ stringRating + " Stars");
         infoWindow.open(map, this);
     });
 
     markers.push(marker);
-    console.log(markers);
 }
 
 
