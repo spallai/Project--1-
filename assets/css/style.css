@@ -84,10 +84,19 @@ footer {
 }
 
 #recipeContainer {
-    width: 35%;
+    width: 33%;
     position: absolute;
     overflow: scroll;
     height: 30em;
+    -ms-overflow-style: none; 
+    overflow: -moz-scrollbars-none;  
+    background-color: #fafafa;
+    border-radius: 16px;
+}
+
+
+#recipeContainer::-webkit-scrollbar { 
+    display: none;  
 }
 
 #map {
@@ -97,4 +106,5 @@ footer {
     height: 520px;
     width: 373px;
     margin: 0% -13%;
+    border-radius: 25px;
 }
