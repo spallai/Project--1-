@@ -72,7 +72,7 @@ function searchMap(newSearch) {
     var request = {
         location: new google.maps.LatLng(lat, lng),
         query: newSearch,
-        radius: 10,
+        radius: 500,
         type: ['restaurant']
     };
 
