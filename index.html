@@ -8,6 +8,18 @@
     <title>RecAPI</title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Gloria+Hallelujah|Great+Vibes|Noto+Serif+TC|Homemade+Apple|Indie+Flower|Open+Sans+Condensed:300|Tangerine"
+        rel="stylesheet">
+    <!-- font family to choose  -->
+    <!-- 
+font-family: 'Noto Serif TC', serif;
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Great Vibes', cursive;
+font-family: 'Tangerine', cursive;
+font-family: 'Homemade Apple', cursive;  -->
 </head>
 
 <body>
@@ -16,40 +28,37 @@
         <form>
             <label>Search using an ingredient</label><br>
             <input id="search" type="text" name="search">
-            <input class="button" id="submit" type="submit">
+            <input class="button" id="submit" type="submit" style="font-family: 'Noto Serif TC', serif">
         </form>
     </div>
-    <div class="container">
-        <div class="row">
 
-            <div id="leftCol" class="col1">
+    <div class="grid-container outline" id="grid">
+        <div class="row">
+            <div class="col-1">
                 <h2>Recipe Results</h2>
-
-
-            </div>
-            <div id="rightCol" class="col2">
-                <div id="rightColH2">
-                    <h2>Place Results</h2>
-                </div>
-
-                <div id="iFrameDiv" style="float: right; clear: right">
-                    <iframe width="200" height="200" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBvj-rM-F-lhlYaGeXl8lZu-gNK4EdVoiQ
-    &q=mushroom"
-                        allowfullscreen>
-                    </iframe>
-                </div>
+                <div id="recipeContainer"></div>
             </div>
 
+            <div id="column" class="col-2">
+                <h2>Place Results</h2>
+                <div id="map"></div>
+            </div>
 
         </div>
-        <div class="row">
 
-        </div>
     </div>
 
+
+    <footer>
+        <h4>RecAPI &#169</h4>
+    </footer>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlWQlpf6ZOi51m15jTbAfQpakUK1W6m68&libraries=places"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/recipeLogic.js"></script>
+
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-<script src="assets/javascript/app.js"></script>
 
 </html>
