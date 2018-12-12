@@ -51,7 +51,8 @@ function showPosition(position) {
 
 
 
-// We use a document.on("click") function in order 
+// We use a document.on("click") function in order to capture the value of the input box and place it in the newSearch variable.
+// The searchMap() function is then invoked and passed in the variable newSearch.
 
 $(document).on("click", "#submit", function() {
     var newSearch = $("#search").val();
@@ -59,6 +60,12 @@ $(document).on("click", "#submit", function() {
 });
 
 
+
+// searchMap() first keeps the form from submitting and refreshing the page by using event.preventDefault().
+// searchMap() then creates a new object called request that holds a location, search term, search radius, and
+// an added search type which refines the number of results.
+
+// service.textSearch() is then invoked and passed in the request object and callback function.
 
 function searchMap(newSearch) {
     event.preventDefault();
@@ -83,6 +90,11 @@ function setMapOnAll(map) {
 
 
 
+// deleteMarkers() goes through every marker in the markers[] array using a for loop and 
+// sets the .setMap() on all of the markers to null making them dissappear from the map.
+// then deleteMarkers() also clears the markers[] array which prevents those markers from ever appearing again on the map.
+// That markers[] array is then used for the next set of search results which will be loaded in and produce there own markers.
+
 function deleteMarkers() {
     for (var i = 0; i < markers.length; i++) {
         setMapOnAll(null);
@@ -98,6 +110,9 @@ $(document).on("click", "#search", function () {
 
 
 
+// createMarker() creates a new marker at the position given, which is the position that is passed 
+// in the place variable which holds the latitude and longitude of the current result.
+
 function createMarker(place) {
     var placeLoc = place.geometry.location;
     var marker = new google.maps.Marker({
@@ -112,6 +127,11 @@ function createMarker(place) {
             address: place.formatted_address,
             rating: place.rating
         }
+
+
+
+        // This block of code takes the previously constructed infoWindow and uses .setContent to set 
+        // the content to the name of the establishment, address, and rating.
 
         console.log(content);
         var stringAddress = content.address;
