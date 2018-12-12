@@ -1,5 +1,4 @@
 var recipeBaseUrl = "https://api.edamam.com/search?&app_id=c3d07cfd&app_key=2a58703995fceba093b9313f0c1ee00e&from=0&to=4&q="
-console.log(recipeBaseUrl);
 var searchTerm = "";
 
 $("#submit").on("click", searchRecipe);
@@ -34,14 +33,12 @@ function searchRecipe(event) {
         method: "GET"
     }).then(function (response) {
         var results = response.hits;
-        console.log(response);
 
         $("#recipeContainer").empty();
        
         for (i = 0; i < results.length; i++) {
             console.log(results[i]);
 
-            //EXAMPLE
             var recipeDiv = $("<div>").addClass("recipe");
             
             var recipeLabel = $("<h3>").addClass("label");
