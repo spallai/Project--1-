@@ -35,9 +35,16 @@ function showPosition(position) {
 }
 
 
-$(document).on("click", "#submit", function () {
+$(document).on("click", "#submit", function() {
+    var newSearch = $("#search").val(); //read text from input box #search
+    searchMap(newSearch); //pass search term to search map
+});
+
+
+//turned searchMap into a function that can be used in recipeLogic
+function searchMap(newSearch) {
     event.preventDefault();
-    var newSearch = $("#search").val();
+    //var newSearch = $("#search").val();
     console.log(newSearch);
 
     var request = {
@@ -50,7 +57,7 @@ $(document).on("click", "#submit", function () {
     service = new google.maps.places.PlacesService(map);
     service.textSearch(request, callback);
 
-})
+}
 
 function setMapOnAll(map) {
     for (var i = 0; i < markers.length; i++) {
