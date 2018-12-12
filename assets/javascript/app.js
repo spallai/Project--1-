@@ -51,7 +51,8 @@ function showPosition(position) {
 
 
 
-// We use a document.on("click") function in order 
+// We use a document.on("click") function in order to capture the value of the input box with the id="search";
+// The searchMap() function is then invoked and passed in the newSearch variable which is equal to whatever the user entered into the input box.
 
 $(document).on("click", "#submit", function() {
     var newSearch = $("#search").val();
@@ -59,6 +60,9 @@ $(document).on("click", "#submit", function() {
 });
 
 
+
+// 
+// 
 
 function searchMap(newSearch) {
     event.preventDefault();
